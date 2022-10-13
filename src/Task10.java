@@ -1,15 +1,20 @@
-import java.util.ArrayList;
 public class Task10
 {
+    static int count = 0;
+    static int weight = 0;
+    public static void AddBall(int w, String color)
+    {
+        if (color == "blue")
+            count++;
+        weight += w;   
+    }
     public static void main(String[] args)
     {
         System.out.println("Task 10");
-        ArrayList<Ball> balls = new ArrayList<Ball>();
-        balls.add(new Ball(3, "blue"));
-        balls.add(new Ball(5, "green"));
-        balls.add(new Ball(4, "blue"));
-        Basket basket = new Basket(balls);
-        System.out.println("Blue balls: " + basket.GetColorAmount("blue"));
-        System.out.println("Total weight: " + basket.GetTotalWeight());
+        AddBall(3, "blue");
+        AddBall(5, "green");
+        AddBall(4, "blue");
+        System.out.println("Blue balls: " + count);
+        System.out.println("Total weight: " + weight);
     }
 }
